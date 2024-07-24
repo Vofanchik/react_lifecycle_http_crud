@@ -1,0 +1,15 @@
+.Header {
+    display: flex;
+    flex-direction: row;
+}
+
+.Header button {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    border: 1px solid green;
+    background-color: white;
+    font-size: 35px;
+    color: green;
+    margin-left: 20px;
+  }
