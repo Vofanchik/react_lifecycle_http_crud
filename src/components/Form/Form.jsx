@@ -12,7 +12,9 @@ function Form({handleSubmit}) {
     return (
         <div className="Form">
             <form
-                onSubmit = {() => handleSubmit(textCard)}>
+                onSubmit = {(event) => {                    
+                    handleSubmit(textCard);
+                    event.preventDefault();}}>
 
                 <div className='Label-text'>
                     <label htmlFor='Card-text'>New Note</label>

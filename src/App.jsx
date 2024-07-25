@@ -4,28 +4,28 @@ import Cards from './components/Cards/Cards';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from './components/Header/Header';
-
+let baseurl = "http://localhost:7070/"
 function App() {
 
   const [cards, setCards] = useState([]);
 
   useEffect(
     () => {
-      axios.get('http://localhost:7070/notes')
+      axios.get(baseurl+'notes')
         .then(responce => {
           setCards(responce.data);
         })
     }, []);
 
   const handleSubmit = (currentText) => {
-    axios.post('http://localhost:7070/notes', {
+    axios.post(baseurl+'notes', {
       "id": 0,
       "content": currentText
     })
   };
 
   const onDeleteCard = (idDeletedCard) => {
-    axios.delete('http://localhost:7070/notes/' + idDeletedCard);
+    axios.delete(baseurl+'notes/' + idDeletedCard);
     updateCards();
   }
 
